@@ -1,0 +1,4 @@
+### Ansible inventory file. Just replace IPs and password
+[targets]
+TargetVM1 ansible_host=10.1.0.4 ansible_user=admin ansible_ssh_pass=<password> ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+TargetVM2 ansible_host=10.1.0.6 ansible_user=admin ansible_ssh_pass=<password> ansible_ssh_common_args='-o StrictHostKeyChecking=no'
