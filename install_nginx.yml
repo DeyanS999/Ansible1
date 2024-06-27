@@ -1,0 +1,22 @@
+### Installs nginx
+---
+- name: Manage services
+  hosts: targets
+  become: yes
+  tasks:
+    - name: install Nginx
+      apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+
+  handlers:
+    - name: restart nginx
+      systemd:
+        name: nginx
+        state: restarted
